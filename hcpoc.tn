@@ -1,9 +1,9 @@
 {
   "blocksInfo": {
-    "blocksInfo": "[[\"_s36znqjir\",{\"title\":\"hcpoc\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":28},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":28}}],[\"_y28v3o3xj\",{\"title\":\"hcpoc\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"deleted\":true}]]",
-    "blocksNavigator": "[\"_s36znqjir\"]",
-    "blocksHierarchy": "{\"id\":\"_s36znqjir\",\"children\":[]}",
-    "nowNavigatorIndex": "0",
+    "blocksInfo": "[[\"_s36znqjir\",{\"title\":\"hcpoc\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":28},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":58},\"highlights\":\"一款简单的渗透测试框架，参考pocsuite3、msf等\"}],[\"_y28v3o3xj\",{\"title\":\"hcpoc\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"deleted\":true}],[\"_lmgv1wkb5\",{\"title\":\"main.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":43},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":43},\"highlights\":\"主函数，负责启动该渗透测试框架\"}],[\"_6m905mt2k\",{\"title\":\"lib\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":48},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":48},\"highlights\":\"负责存放渗透测试框架核心代码等\"}],[\"_f2j3lsxzf\",{\"title\":\"mode\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":49},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":49},\"highlights\":\"负责存放一些功能性的代码文件\"}],[\"_ijv67089m\",{\"title\":\"pocs\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":50},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":50},\"highlights\":\"存放各种漏洞的探测、利用代码\"}],[\"_ul3tk1d2u\",{\"title\":\"scanner\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"highlights\":\"负责存放对漏洞进行探测的代码\"}],[\"_xmpwa8pht\",{\"title\":\"exploits\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"highlights\":\"负责存放对于漏洞进行攻击的代码\"}],[\"_b9laqtl4r\",{\"title\":\"tools\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":4},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":4},\"highlights\":\"负责存放集成在渗透测试框架中的工具\"}],[\"_b1g2ci4ln\",{\"title\":\"config.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":16},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":16},\"highlights\":\"工具的配置文件，主要负责存放一些版本信息以及一些配置的路径信息\"}],[\"_ihjjrledq\",{\"title\":\"__init__.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"highlights\":\"将该文件设置为包\"}],[\"_0qq80ybfz\",{\"title\":\"__pycache__\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"highlights\":\"存放.pyc虚拟环境文件\"}]]",
+    "blocksNavigator": "[\"_s36znqjir\",\"_6m905mt2k\"]",
+    "blocksHierarchy": "{\"id\":\"_s36znqjir\",\"children\":[{\"id\":\"_lmgv1wkb5\"},{\"id\":\"_6m905mt2k\",\"children\":[{\"id\":\"_ihjjrledq\"},{\"id\":\"_0qq80ybfz\"},{\"id\":\"_b1g2ci4ln\"}]},{\"id\":\"_f2j3lsxzf\"},{\"id\":\"_ijv67089m\",\"children\":[{\"id\":\"_ul3tk1d2u\"},{\"id\":\"_xmpwa8pht\"}]},{\"id\":\"_b9laqtl4r\"}]}",
+    "nowNavigatorIndex": "1",
     "clickedBlockID": "\"_s36znqjir\"",
     "clickedBlockIDInMap": "\"_s36znqjir\"",
     "showBlockEditor": "true",
@@ -21,6 +21,15 @@
       "content": {
         "type": "doc",
         "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "\"\"\"\nHcPoc\n  一款简单的渗透测试框架，同时也是一个渗透测试工具集，可以在其中调用其他常用的渗透测试工具，也可以编写poc、exp，直接对目标进行扫描或者攻击。设计参考msf、WebPocket、pocsuite3等工具。\n\n主要功能：\n  利用编写的poc、exp实现对网站对批量漏洞扫描\n  调用其他常用的渗透测试工具\n\"\"\""
+              }
+            ]
+          },
           {
             "type": "paragraph",
             "attrs": {
