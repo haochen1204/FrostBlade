@@ -4,7 +4,7 @@ def cin():
     控制台输入函数
     '''
 
-    msg = input("HcPoc > ")
+    msg = input("FrostBlade > ")
     if msg == "exit":
         print("See you!\n")
         return False
@@ -29,7 +29,7 @@ def cmd():
     '''
     控制台运行函数
     '''
-    print("\nWelcome to HcPoc! \nYou can do everything you want in this and have a goot time!\n")
+    print("\nWelcome to FrostBlade! \nYou can do everything you want in this and have a goot time!\n")
     while(True):
         judge=cin()
         if judge==False:
