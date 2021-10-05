@@ -8,7 +8,7 @@ def head():
     显示工具的开头展示信息
     '''
     print("""
-        ________                        _   ______   __                __        
+         ________                        _   ______   __                __        
         |_   __  |                      / |_|_   _ \ [  |              |  ]       
           | |_ \_|_ .--.   .--.   .--. `| |-' | |_) | | |  ,--.    .--.| | .---.  
           |  _|  [ `/'`\]/ .'`\ \( (`\] | |   |  __'. | | `'_\ : / /'`\\' |/ /__\\\\ 
@@ -19,16 +19,7 @@ def head():
     print("                                         个人博客 https://www.haochen1204.com")
     print("                                         github   https://github.com/haochen1204/FrostBlade") 
     print("")
-    return
        
-       
-
-
-
-
-                                                                            
-
-
 def help():
     '''
     显示帮助文档
@@ -56,7 +47,6 @@ def main():
         except getopt.GetoptError as err:
             print(str(err))
             help()
-
         # 从opts中读取数据，o为参数,a为参数后带的值
         for o,a in opts:
             if o in ("-h","--help"):    # 如果参数为help，展示help界面
