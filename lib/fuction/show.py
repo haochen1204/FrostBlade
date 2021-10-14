@@ -18,6 +18,14 @@ def show_pocs():
         用于展示工具中所带的poc等
     '''
     print('')
-    for i in config.PocPwd:
-        for j in config.PocFile[i]:
-            print(i+'/'+j)
+    if config.Pwd == '':
+        for i in config.PocPwd:
+            for j in config.PocFile[i]:
+                if '__init__.py' not in j:
+                    print(i+'/'+j)
+        print('')
+    else:
+        for i in config.PocFile[config.Pwd]:
+            if '__init__.py' not in i:
+                print(i)
+            print('')

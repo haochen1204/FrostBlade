@@ -8,7 +8,10 @@ def cin():
     控制台输入函数
     '''
     # 提示用户进行输入
-    msg = input("FrostBlade > ")
+    if config.Pwd == '':
+        msg = input("FrostBlade > ")
+    else:
+        msg = input("FrostBlade (" + config.Pwd +') > ')
     # 如果输入为exit，则打印再见语句，并退出命令行，否则继续运行循环
     if msg == "exit":
         print("See you!\n")
@@ -78,6 +81,27 @@ def handle(msg):
             judge=True
             cout(judge,msg)
             show.show_pocs()
+
+    # 判断用户输入的内容是否是要进入的路径
+    if re.match('^use ',msg) and judge == False:
+        tmp = msg[4:]
+        #print(config.PocFile)
+        #print(config.PocFile.values())
+        keys = config.PocFile.keys()
+        valuse = config.PocFile.values()
+        for i in keys:
+            if tmp == i:
+                config.Pwd = i
+                judge = True
+        for i in valuse:
+            if tmp == str(i):
+                config.Pwd = i
+                judge = True
+    
+    # 判断用户是否要会带初始目录
+    if 'back' == msg and judge == False:
+        config.Pwd = ''
+        judge = True
 
     # 用户输入的内容不合法，提示错误信息
     if judge == False:
