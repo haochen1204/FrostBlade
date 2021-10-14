@@ -16,3 +16,9 @@ PyTools = {
             'xray' : '/Users/haochen/tool/xray/xray',
             'dirsearch' : 'python3 /Users/haochen/tool/dirsearch/dirsearch.py'
         }
+# 存放poc路径的列表
+PocPwd=[]
+# 存放poc子目录的字典
+PocDir={}
+# 存放poc子文件的字典
+PocFile={}
