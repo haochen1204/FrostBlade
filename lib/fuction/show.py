@@ -14,6 +14,9 @@ def show_tools():
     print('')
 
 def show_pocs():
+    '''
+        用于展示工具中所带的poc等
+    '''
     print('')
     for i in config.PocPwd:
         for j in config.PocFile[i]:
