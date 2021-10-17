@@ -4,6 +4,7 @@ from lib.fuction import file
 import sys
 import getopt
 
+
 def head():
     '''
     显示工具的开头展示信息
@@ -58,3 +59,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    

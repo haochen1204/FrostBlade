@@ -1,6 +1,7 @@
 import os
 from lib import config
 
+
 def read_file(file_dir):
     '''
        读取系统中存在的文件以及目录等信息 

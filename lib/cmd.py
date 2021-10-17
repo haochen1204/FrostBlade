@@ -2,6 +2,7 @@ import os
 import re
 from lib import config
 from lib.fuction import show
+from pocs.scanner.shiro import CVE_2020_1957
 
 def cin():
     '''
@@ -102,7 +103,10 @@ def handle(msg):
     if 'back' == msg and judge == False:
         config.Pwd = ''
         judge = True
-
+    if 'attack' == msg:
+        # test
+        a=CVE_2020_1957.POC
+        a.scanner()
     # 用户输入的内容不合法，提示错误信息
     if judge == False:
         cout(judge,msg)
