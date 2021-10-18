@@ -1,5 +1,5 @@
 from lib import config
-
+import re
 def show_tools():
     '''
         用于展示工具中集成的其他工具
@@ -20,12 +20,16 @@ def show_pocs():
     print('')
     if config.Pwd == '':
         for i in config.PocPwd:
-            for j in config.PocFile[i]:
-                if '__init__.py' not in j:
-                    print(i+'/'+j)
+            if '__pycache__' not in i:
+                for j in config.PocFile[i]:
+                    if '__init__.py' not in j:
+                        print(i+'/'+j)
         print('')
-    else:
+    elif re.match('.py$',config.Pwd) == False:
         for i in config.PocFile[config.Pwd]:
             if '__init__.py' not in i:
-                print(i)
+                print(config.Pwd+'/'+i)
+        for i in config.PocDir[config.Pwd]:
+            if '__pycache__' not in i:
+                print(config.Pwd+'/'+i)
             print('')
