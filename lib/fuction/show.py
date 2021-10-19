@@ -20,16 +20,14 @@ def show_pocs():
     print('')
     if config.Pwd == '':
         for i in config.PocPwd:
-            if '__pycache__' not in i:
-                for j in config.PocFile[i]:
-                    if '__init__.py' not in j:
-                        print(i+'/'+j)
+            for j in config.PocFile[i]:
+                print(i+'/'+j)
         print('')
-    elif re.match('.py$',config.Pwd) == False:
-        for i in config.PocFile[config.Pwd]:
-            if '__init__.py' not in i:
-                print(config.Pwd+'/'+i)
-        for i in config.PocDir[config.Pwd]:
-            if '__pycache__' not in i:
-                print(config.Pwd+'/'+i)
-            print('')
+    elif re.match('.py$',config.Pwd) == None:
+        for i in config.PocPwd:
+            if re.match('^'+config.Pwd,i):
+                for j in config.PocDir[i]:
+                    print(i+'/'+j)
+                for j in config.PocFile[i]:
+                    print(i+'/'+j)
+        print('')

