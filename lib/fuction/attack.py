@@ -3,7 +3,6 @@ import threading
 import re
 from lib import config
 
-
 class attack:
 
     def __init__(self,poc_pwd,target):
@@ -13,19 +12,24 @@ class attack:
         pwd = poc_pwd
         pwd=pwd.replace('/','.')
         pwd=pwd.replace('.py','')
-        self.poc = importlib.import_module(pwd).POC
+        self.poc = importlib.import_module(pwd).POC()
         self.target = target
+
+    def show_msg(self):
+        '''
+            展示特定漏洞信息的函数
+        '''
+        self.poc.show_options()
 
     def exploit(self):
         '''
             运行poc进行攻击或者扫描
         '''
-        if 'scanner' in self.poc.pocName:
-            judge=self.poc.scanner(self.target)
-        elif 'exploit' in self.poc.pocName:
+        #print(self.poc.poc_pwd)
+        if 'scanner' in self.poc.poc_pwd:
+            self.poc.scanner(self.target)
+        elif 'exploit' in self.poc.poc_pwd:
             self.poc.exploit(self.target)
-        if judge == True:
-            print('YEs')
 
 
 class pocmessage:
@@ -42,8 +46,9 @@ class pocmessage:
         '''
         self.poc_pwd = config.Pwd
         keys = config.PocFile.keys()
-        if re.match('.py$',self.poc_pwd):
+        if re.search('.py$',self.poc_pwd):
             self.poc_list.append(self.poc_pwd)
+            print(len(self.poc_list))
         else:
             for i in keys:
                 if re.match('^'+self.poc_pwd,i):
@@ -56,7 +61,7 @@ class pocmessage:
         '''
         if len(self.target_list) == 0 and len(self.poc_list) == 0:
             return 0 # 没有进行任何设置
-        elif len(self.target_list) > 0 and len(self.poc_list) == 0:
+        elif len(self.poc_list) > 0 and len(self.target_list) == 0:
             return 1 # 未设置poc
         elif len(self.poc_list) > 0 and len(self.target_list) > 0:
             return 2 #设置完成
@@ -76,7 +81,12 @@ class pocmessage:
             for i in self.poc_list:
                 if i !=' ':
                     print("     {0:^10}     {1:5}      {2:<20}".format('','',i)) 
-    
+        else:
+            print('')
+            att = attack(self.poc_pwd,'')
+            att.show_msg()
+
+
     def add_message(self,msg,input):
         '''
             用户增加poc或者target的函数
@@ -123,6 +133,9 @@ class pocmessage:
         poc_max = len(self.poc_list)
         target_max = len(self.target_list)
         #print(str(poc_max)+'***'+str(target_max))
+        print('')
+        print('target : ' +str(target_max)+'  poc : '+ str(poc_max)+ ' total : '+str(poc_max*target_max)+'\n')
+        print('    {0:^10}  {1:^50} {2:^20}'.format('status','target','pocname'))
         if self.judge() == 2:
             while True:
                 if threading.active_count()-1 <= self.thread:
@@ -139,6 +152,7 @@ class pocmessage:
                             target_num = target_num + 1
                     else:
                         if threading.active_count() == 1:
+                            print('')
                             break
         else:
             print('\n请设置需要的参数！\n')

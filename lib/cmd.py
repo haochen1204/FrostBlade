@@ -28,7 +28,6 @@ def cout(judge,msg):
         print('[+] ' + msg + ' is running!')
     if judge == 0:
         print('[-] '+ msg + " is error in FrostBlade! You can use help to show how to use FrostBlade!")
-
     return
 
 def handle(msg):
