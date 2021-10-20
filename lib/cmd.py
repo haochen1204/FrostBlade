@@ -93,10 +93,11 @@ def handle(msg):
                 config.Pwd = i
                 judge = 1
                 break
-            for j in config.PocFile[i]:
-                if j in tmp:
-                    config.Pwd = i+'/'+j
-                    judge = 1
+            elif i in tmp:
+                for j in config.PocFile[i]:
+                    if j in tmp:
+                        config.Pwd = i+'/'+j
+                        judge = 1
         if judge == 1:
             att.clear_list()
             att.init()

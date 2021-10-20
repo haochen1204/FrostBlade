@@ -22,3 +22,19 @@ def read_file(file_dir):
 
     #print(str(config.PocDir))
     #print(str(config.PocFile))
+
+def read_file_line(file_dir):
+    '''
+        按行读取文件内容
+    '''
+
+    msg_list = []
+    try:
+        for i in open(file_dir):
+            i=i.strip()
+            msg_list.append(i)
+        return msg_list
+    except:
+        print('[-] file is error!')
+
+
