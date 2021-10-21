@@ -39,6 +39,7 @@ def main():
     head()
     # 读取poc文件信息
     file.read_file('pocs')
+    file.read_file('mode')
     # 读取命令行选项,若没有则直接进入控制台
     if not len(sys.argv[1:]):
         cmd.cmd()
