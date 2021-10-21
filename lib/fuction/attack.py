@@ -114,8 +114,11 @@ class pocmessage:
         '''
         if msg == 'target':
             self.target_list.append(input)
-        if msg == 'poc':
+        elif msg == 'poc':
             self.poc_list.append(input)
+        else:
+            return False
+        return True
     
     def set_message(self,msg,input):
         '''
@@ -129,6 +132,9 @@ class pocmessage:
             self.thread = int(input)
         elif msg in keys:
             self.parameter[msg] = input
+        else:
+            return False
+        return True
 
     def __read_file(self):
         '''

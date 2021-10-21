@@ -31,10 +31,13 @@ class POC(pocs.Pocs):
             response = pocs.requests.get(target,headers=head)
             if response.status_code == 200:
                 self.att_msg['status']='success'
+                self.att_msg['msg'] = '存在漏洞！'
             else:
                 self.att_msg['status']='failed'
+                self.att_msg['msg'] = '不存在漏洞，网站返回值为: '+str(response.status_code) 
         except:
             self.att_msg['status']='error'
+            self.att_msg['msg'] = '无法正确访问网站！'
         self.__cout()
     
     def __cout(self):

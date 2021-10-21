@@ -1,3 +1,0 @@
-2021-10-16 09:36:08.194 java[27911:1198658] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
-2021-10-16 09:45:49.256 java[27911:1198658] Apple AWT Internal Exception: java.lang.NullPointerException
-Deleting temporary files - please wait ... done.

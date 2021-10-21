@@ -23,7 +23,8 @@ class Pocs:
     att_msg={
         'status' : '',
         'target' : '',
-        'payload' : ''
+        'payload' : '',
+        'msg' : ''
     }
     # poc名称
     poc_name = ''
@@ -66,11 +67,11 @@ class Pocs:
             输出结果所用的函数
         '''
         if self.att_msg['status'] == 'success':
-            print('\033[32m[+] {0:<10}  {1:<50} {2:<20}\033[0m'.format(self.att_msg['status'],self.att_msg['target'],self.poc_name))
+            print('\033[32m[+] {0:<10}  {1:<50} {2:<20} {3:<20}\033[0m'.format(self.att_msg['status'],self.att_msg['target'],self.poc_name,self.att_msg['msg']))
         elif self.att_msg['status'] == 'failed':
-            print('[-] {0:<10}  {1:<50} {2:<20}'.format(self.att_msg['status'],self.att_msg['target'],self.poc_name))
+            print('[-] {0:<10}  {1:<50} {2:<20} {3:<20}'.format(self.att_msg['status'],self.att_msg['target'],self.poc_name,self.att_msg['msg']))
         else:
-            print('[*] {0:<10}  {1:<50} {2:<20}'.format(self.att_msg['status'],self.att_msg['target'],self.poc_name))
+            print('[*] {0:<10}  {1:<50} {2:<20} {3:<20}'.format(self.att_msg['status'],self.att_msg['target'],self.poc_name,self.att_msg['msg']))
 
 
     def show_options(self):
@@ -86,3 +87,7 @@ class Pocs:
         if self.att_msg['payload']!='':
             print('     {0:^10}     {1:5}      {2:<100}'.format('payload','',self.att_msg['payload']))
         print('     {0:^10}     {1:5}      {2:<100}'.format('','',self.msg))
+
+    def return_cout(self):
+        self.att_msg['poc_name'] = self.poc_name
+        return self.att_msg
