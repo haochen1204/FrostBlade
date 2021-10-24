@@ -21,13 +21,35 @@ def show_pocs():
     if config.Pwd == '':
         for i in config.PocPwd:
             for j in config.PocFile[i]:
-                print(i+'/'+j)
+                if 'mode' not in i:
+                    print(i+'/'+j)
         print('')
     elif re.match('.py$',config.Pwd) == None:
         for i in config.PocPwd:
-            if re.match('^'+config.Pwd,i):
-                for j in config.PocDir[i]:
-                    print(i+'/'+j)
-                for j in config.PocFile[i]:
+                if re.match('^'+config.Pwd,i):
+                    for j in config.PocDir[i]:
+                        print(i+'/'+j)
+                    for j in config.PocFile[i]:
+                        print(i+'/'+j)
+        print('')
+
+def show_modes():
+    '''
+        用于展示工具中所带的功能模块
+    '''
+    print('')
+    if config.Pwd == '':
+        for i in config.PocPwd:
+            for j in config.PocFile[i]:
+                if 'pocs' not in i:
                     print(i+'/'+j)
         print('')
+    elif re.match('.py$',config.Pwd) == None:
+        for i in config.PocPwd:
+                if re.match('^'+config.Pwd,i):
+                    for j in config.PocDir[i]:
+                        print(i+'/'+j)
+                    for j in config.PocFile[i]:
+                        print(i+'/'+j)
+        
+    

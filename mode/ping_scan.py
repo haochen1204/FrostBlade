@@ -1,4 +1,3 @@
-import os
 import threading
 import subprocess
 import mode
@@ -29,6 +28,8 @@ class MOD(mode.modules):
                 thread.start()
                 i += 1
             if i > 255 and threading.active_count() == 1:
+                print('')
+                self.cout()
                 break 
     
     def ping_ip(self,ip): 
@@ -45,4 +46,7 @@ class MOD(mode.modules):
         # 判断每行中是否存在TTL，存在则说明ping通，主机存活
         #print(output)
         if output.find('TTL')>=0 or output.find('ttl')>=0:
-            print("[+] ",ip," is alive")
+            #print("[+] {0:^10} is alive".format(ip))
+            self.msg['status'].append('success')
+            self.msg['target'].append(ip)
+            self.msg['msg'].append('is alive!')

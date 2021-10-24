@@ -1,3 +1,5 @@
+
+
 class modules:
     # 模块名称
     modules_name = ''
@@ -9,6 +11,12 @@ class modules:
     must_parameter = {}
     # 选择参数
     choo_parameter = {}
+    # 输出结果
+    msg = {
+        'status' : [],
+        'target' : [],
+        'msg' : []
+    }
 
     def __init__(self) -> None:
         pass
@@ -29,4 +37,10 @@ class modules:
         '''
             结果的输出函数
         '''
+        for status,target,msg in zip(self.msg['status'],self.msg['target'],self.msg['msg']):
+            if status == 'success':
+                print('\033[32m[+] {0:5}    {1:<20}      {2:<20}\033[0m'.format(status,target,msg))
+            else:
+                print('[-] {0:5}    {1:<20}      {2:<20}'.format(status,target,msg)) 
+
     

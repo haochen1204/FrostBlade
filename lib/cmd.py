@@ -7,18 +7,24 @@ def cin():
     控制台输入函数
     '''
     # 提示用户进行输入
-    if config.Pwd == '':
-        msg = input("FrostBlade > ")
-    else:
-        msg = input("FrostBlade (" + config.Pwd +') > ')
-    # 如果输入为exit，则打印再见语句，并退出命令行，否则继续运行循环
-    if msg == "exit":
-        print("See you!\n")
-        return False
-    elif msg == '':
-        pass
-    else:
-        handle(msg)
+    try:
+        if config.Pwd == '':
+            msg = input("FrostBlade > ")
+        else:
+            msg = input("FrostBlade (" + config.Pwd +') > ')
+        # 如果输入为exit，则打印再见语句，并退出命令行，否则继续运行循环
+        if msg == "exit":
+            print("See you!\n")
+            return False
+        elif msg == '':
+            pass
+        else:
+            handle(msg)
+    except KeyboardInterrupt:
+            print("\n[-] User Quit! See you !")
+            return False
+    except EOFError:
+            print("\n[-] Pocsuite stopped")
     return True
 
 def cout(judge,msg):
@@ -26,7 +32,7 @@ def cout(judge,msg):
     控制台输出函数
     '''
     if judge == 1:
-        print('[+] ' + msg + ' is running!')
+        print('[+] ' + msg + ' is ok!')
     else:
         print('[-] '+ msg)
 
@@ -67,9 +73,12 @@ def handle(msg):
             if tmp[1] == 'tools':
                 cout(1,msg)
                 show.show_tools()
-            elif tmp[1] == 'pocs' or tmp[1] == 'modes':
+            elif tmp[1] == 'pocs':
                 cout(1,msg)
                 show.show_pocs()
+            elif tmp[1] == 'modes':
+                cout(1,msg)
+                show.show_modes()
             elif tmp[1] == 'options':
                 cout(1,msg)
                 if 'pocs' in config.Pwd:
@@ -91,6 +100,11 @@ def handle(msg):
                 if 'pocs' in config.Pwd:
                     att.clear_list()
                     att.init()
+            elif config.Pwd+'/'+tmp[1] in keys:
+                config.Pwd = config.Pwd+'/'+tmp[1]
+                if 'pocs' in config.Pwd:
+                    att.clear_list()
+                    att.init() 
             else:
                 for i in keys:
                     for j in config.PocFile[i]:
@@ -103,6 +117,15 @@ def handle(msg):
                                 mod.clear_list()
                                 mod.init(config.Pwd)
                             break
+                        elif i + '/' + j == config.Pwd + '/' + tmp[1]:
+                            config.Pwd = config.Pwd + '/' + tmp[1]
+                            if 'pocs' in config.Pwd:
+                                att.clear_list()
+                                att.init()
+                            elif 'mode' in config.Pwd:
+                                mod.clear_list()
+                                mod.init(config.Pwd)
+                            break 
             if tmp_pwd == config.Pwd:
                 back_msg = '路径输入错误，请重新输入！'
 
