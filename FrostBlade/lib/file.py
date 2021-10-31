@@ -47,7 +47,7 @@ class file:
                         # 读取文件信息
                         msg = '无poc名称信息，请检查poc'
                         try:
-                            f = open(tmp_poc_path)
+                            f = open(tmp_poc_path,'r',encoding='UTF-8')
                         except:
                             self.__output.output_error('无法正确打开poc，请检查poc！')
                         for line in f.readlines():
@@ -91,7 +91,7 @@ class file:
                         # 读取文件信息
                         msg = '无module名称信息，请检查module'
                         try:
-                            f = open(tmp_modules_path)
+                            f = open(tmp_modules_path,'r',encoding='UTF-8')
                         except:
                             self.__output.output_error('无法正确打开module，请检查module！')
                         for line in f.readlines():

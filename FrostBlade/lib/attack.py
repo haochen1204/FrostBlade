@@ -33,7 +33,7 @@ class attack:
         self.pocs_pwd = file.file().search_pocs(self.pwd)
         # 循环获取poc并创建对应的类，加入到列表当中
         for i in self.pocs_pwd:
-            i=i.replace('/','.')
+            i=i.replace(os.sep,'.')
             i=i.replace('.py','') 
             tmp_poc = importlib.import_module(i).POC()
             self.poc_list.append(tmp_poc)

@@ -1,4 +1,5 @@
 import importlib
+import  os
 from lib import output
 
 class modmessage:
@@ -8,7 +9,7 @@ class modmessage:
             初始化并引入模块
         '''
         self.pwd = mod_pwd
-        self.pwd=self.pwd.replace('/','.')
+        self.pwd=self.pwd.replace(os.sep,'.')
         self.pwd=self.pwd.replace('.py','')
         self.mod = importlib.import_module(self.pwd).MOD()
         self.must_parameter = self.mod.must_parameter

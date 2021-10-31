@@ -120,6 +120,10 @@ class handler():
                 tmp_pwd == 'error'
                 self.output.output_error('您输入的参数有误，请重新输入！',False)
         else:
+            if lib.IS_WIN:
+                args = args.replace('/','\\')
+                print(args)
+            print(str(lib.POCS)+str(lib.POCS_LIST))
             for i in lib.POCS:
                 if i[1] == args:
                     tmp_pwd = args 

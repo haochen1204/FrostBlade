@@ -1,4 +1,3 @@
-# -*- coding:utf-8 -*
 import pocs
 from lib import config
 import re
