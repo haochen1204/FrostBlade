@@ -126,8 +126,8 @@ class handler():
             for i in lib.MODULES:
                 if i[1] == args:
                     tmp_pwd = args
-                elif args in lib.POCS_LIST:
-                    tmp_pwd = args
+            if args in lib.POCS_LIST:
+                tmp_pwd = args
             if tmp_pwd == '':
                 self.output.output_error('您输入的poc/module路径有误！请输入正确的poc/module路径！',False)
             else:
@@ -214,9 +214,15 @@ class handler():
         arg=dict(zip(command_list,arg_list))
         for i in command_list:
             if i in self.mod.must_parameter.keys():
-                self.mod.must_parameter[i] = arg[i]
+                if i in arg.keys():
+                    self.mod.must_parameter[i] = arg[i]
+                else:
+                    self.output.output_error('请输入参数 ' + i + ' 的值！')
             elif i in self.mod.choo_parameter.keys():
-                self.mod.choo_parameter[i] = arg[i]
+                if i in arg.keys():
+                    self.mod.choo_parameter[i] = arg[i]
+                else:
+                    self.output.output_error('请输入参数 ' + i + ' 的值！')
             else:
                 self.output.output_error('参数 ' + i + ' 不存在！请输入正确的参数！')
                 break

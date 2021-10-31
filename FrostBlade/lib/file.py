@@ -33,7 +33,7 @@ class file:
             if '__pycache__' not in root:
                 # 将poc目录假如到pocs_list中（仅限于poc目录，不加入exp目录）
                 tmp = 'FrostBlade' + os.sep
-                tmp_path = root.split(tmp)[1]
+                tmp_path = root.split(tmp)[2]
                 if 'scanner' in tmp_path:
                     self.pocs_list.append(tmp_path)
                 # 将文件加入到pocs中
@@ -43,7 +43,7 @@ class file:
                         # 绝对路径
                         tmp_poc_path = root + os.sep + i
                         # 相对路径
-                        tmp_path = tmp_poc_path.split(tmp)[1]
+                        tmp_path = tmp_poc_path.split(tmp)[2]
                         # 读取文件信息
                         msg = '无poc名称信息，请检查poc'
                         try:
@@ -55,6 +55,7 @@ class file:
                                 try:
                                     # 去除名称信息中不需要的字符
                                     msg = line.split('=')[1].strip().replace('"','').replace("'",'')
+                                    break
                                 except:
                                     self.__output.output_error('无法正确获取poc name！请检查poc_name处是否正确')
                         # 将poc路径与名称加入到字典当中
@@ -86,7 +87,7 @@ class file:
                         # 绝对路径
                         tmp_modules_path = root + os.sep + i
                         # 相对路径
-                        tmp_path = tmp_modules_path.split(tmp)[1]
+                        tmp_path = tmp_modules_path.split(tmp)[2]
                         # 读取文件信息
                         msg = '无module名称信息，请检查module'
                         try:

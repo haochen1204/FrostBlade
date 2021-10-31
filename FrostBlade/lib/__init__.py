@@ -32,7 +32,7 @@ FIELD_NAMES = {
     'parameter' : ['PARAMETER','','VALUE'],
     'module result' : ['STATUS','TARGET','MSG'],
     'poc' : ['POC NAME','VUL NAME','VUL NUM','AUTHOR','APP NAME','APP VERSION','EXPLAIN'],
-    'poc result' : ['STATUS','TARGEt','POC NAME','MSG']
+    'poc result' : ['STATUS','TARGET','POC NAME','MSG']
 }
 
 
@@ -40,6 +40,3 @@ FIELD_NAMES = {
 POCS,POCS_LIST = file.file().read_pocs()
 # 模块的信息
 MODULES = file.file().read_modules()
-
-# poc的返回结果
-POC_MESSAGE = []

@@ -26,10 +26,10 @@ class POC(pocs.Pocs):
         '''
             扫描使用的函数
         '''
-        att_msg=[]
+        att_msg={}
         url = must_parameter['target']
-        att_msg.append(url)
-        att_msg.append(self.poc_name)
+        att_msg['target']=url
+        att_msg['pocname'] = self.poc_name
         self.must_parameter = must_parameter
         head = config.Pack
         self.payload='/xxx/..;/admin/'
@@ -39,15 +39,15 @@ class POC(pocs.Pocs):
         try:
             response = requests.get(target,headers=head)
             if response.status_code == 200:
-                att_msg.append('success')
-                att_msg.append('存在漏洞')
+                att_msg['status'] = 'success'
+                att_msg['msg'] = '存在漏洞'
             else:
-                att_msg.append('failed')
-                att_msg.append('不存在漏洞，网站返回值为: '+str(response.status_code) )
+                att_msg['status']='failed'
+                att_msg['msg']='不存在漏洞，网站返回值为: '+str(response.status_code) 
                 #self.set_cout('failed','不存在漏洞，网站返回值为: '+str(response.status_code) )
         except:
-            att_msg.append('error')
-            att_msg.append('无法正确访问网站')
+            att_msg['status']='error'
+            att_msg['msg']='无法正确访问网站'
             #self.set_cout('error','无法正确访问网站！')
         return att_msg
 

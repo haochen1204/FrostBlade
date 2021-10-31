@@ -70,7 +70,7 @@ class cmd_output:
         print(self.tb)
         self.__clear_tb()
 
-    def output_attack(self,msg,head=''):
+    def output_attack(self,msg,head='',sort=''):
         '''
             输出攻击结果
         '''
@@ -79,7 +79,10 @@ class cmd_output:
             self.tb.field_names = lib.FIELD_NAMES[head]
         msg = self.__heandle_message_color(msg)
         self.tb.add_rows(msg)
-        print(self.tb)
+        if sort == '':
+            print(self.tb)
+        else:
+            print(self.tb.get_string(sortby=sort.upper()))
         self.__clear_tb()
 
     def __heandle_message_color(self,msg):

@@ -1,4 +1,5 @@
 import importlib
+from lib import output
 
 class modmessage:
 
@@ -14,6 +15,7 @@ class modmessage:
         self.choo_parameter = self.mod.choo_parameter
         self.info_message = self.mod.get_info()
         self.parameter_message = self.get_parameter()
+        self.output = output.cmd_output()
 
     def judge(self):
         '''
@@ -28,6 +30,7 @@ class modmessage:
     def run(self):
         self.mod.set_parameter(self.must_parameter,self.choo_parameter)
         if self.judge() == True:
+            self.output.output_info('module running！')
             self.mod.run()
 
     

@@ -29,7 +29,7 @@ class Pocs:
 
     def __init__(self) -> None:
         # 扫描的结果信息
-        self.att_msg=[]
+        pass
 
     
     def exploit(self,must_parameter,choo_parameter):
@@ -45,15 +45,4 @@ class Pocs:
         '''
         msg=[self.poc_name,self.vul_name,self.vul_num,self.author,self.app_name,self.app_version,self.msg]
         return msg
-
-    def set_cout(self,judge,msg):
-        '''
-            获取poc结果的函数
-        '''
-        msgs = []
-        msgs.append(judge)
-        msgs.append(self.must_parameter['target'])
-        msgs.append(self.poc_name)
-        msgs.append(msg)
-        lib.POC_MESSAGE.append(msgs)
         

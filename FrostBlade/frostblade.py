@@ -6,7 +6,7 @@ import getopt
 
 def main():
     '''
-    主函数
+        主函数
     '''
     # 显示工具信息展示头
     message.head()

@@ -1,10 +1,11 @@
-from re import I
+from lib import thread
 from lib import file
 from lib import output
 import lib
 import importlib
 import threading
 import os
+from progress.bar import IncrementalBar
 
 
 class attack:
@@ -24,7 +25,8 @@ class attack:
             'target' : ''
         }
         self.choo_parameter = {
-            'thread' : '30'
+            'thread' : '30',
+            'sort' : ''
         }
         # 处理区域
         self.pwd = poc_pwd
@@ -105,22 +107,32 @@ class attack:
         poc_max_index = len(self.poc_list)
         poc_index = 0
         target_index = 0
-        print('target:'+str(target_max_index))
-        print('poc:'+str(poc_max_index))
-        print(str(target_list))
-        print(str(self.poc_list))
+        self.output.output_info('poc running!\n'+'target num :'+str(target_max_index)+'\npoc num:'+str(poc_max_index))
+        threads = []
+        msg = []
+        bar = IncrementalBar('finish ', max = target_max_index*poc_max_index)
         while True:
             if threading.active_count() - 1 < thread_max and poc_index < poc_max_index:
                 tmp_must_parameter = self.must_parameter
                 tmp_choo_parameter = self.choo_parameter
                 tmp_must_parameter['target'] = target_list[target_index]
-                th = threading.Thread(target=self.poc_list[poc_index].exploit,args=(tmp_must_parameter,tmp_choo_parameter))
+                th =  thread.MyThread(self.poc_list[poc_index].exploit,args=(tmp_must_parameter,tmp_choo_parameter))
+                threads.append(th)
                 th.start()
                 target_index += 1
+                bar.next()
                 if target_index >= target_max_index:
                     target_index = 0
                     poc_index += 1
             if poc_index >= poc_max_index and threading.active_count() == 1:
-                self.output.output_attack(lib.POC_MESSAGE,'poc result')
-                lib.POC_MESSAGE = []
+                bar.finish()
+                for i in threads:
+                    att_msg = i.get_result()
+                    thread_msg = []
+                    thread_msg.append(att_msg['status'])
+                    thread_msg.append(att_msg['target']) 
+                    thread_msg.append(att_msg['pocname'])
+                    thread_msg.append(att_msg['msg'])
+                    msg.append(thread_msg)
                 break
+        self.output.output_attack(msg,'poc result',self.choo_parameter['sort'])
