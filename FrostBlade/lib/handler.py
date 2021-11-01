@@ -122,8 +122,6 @@ class handler():
         else:
             if lib.IS_WIN:
                 args = args.replace('/','\\')
-                print(args)
-            print(str(lib.POCS)+str(lib.POCS_LIST))
             for i in lib.POCS:
                 if i[1] == args:
                     tmp_pwd = args 
