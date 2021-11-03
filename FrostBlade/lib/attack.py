@@ -2,6 +2,7 @@ from lib import thread
 from lib import file
 from lib import output
 import lib
+import copy
 import importlib
 import threading
 import os
@@ -26,7 +27,8 @@ class attack:
         }
         self.choo_parameter = {
             'thread' : '30',
-            'sort' : ''
+            'sort' : '',
+            'output' : ''
         }
         # 处理区域
         self.pwd = poc_pwd
@@ -113,8 +115,8 @@ class attack:
         bar = IncrementalBar('finish ', max = target_max_index*poc_max_index)
         while True:
             if threading.active_count() - 1 < thread_max and poc_index < poc_max_index:
-                tmp_must_parameter = self.must_parameter
-                tmp_choo_parameter = self.choo_parameter
+                tmp_must_parameter = copy.deepcopy(self.must_parameter)
+                tmp_choo_parameter = copy.deepcopy(self.choo_parameter)
                 tmp_must_parameter['target'] = target_list[target_index]
                 th =  thread.MyThread(self.poc_list[poc_index].exploit,args=(tmp_must_parameter,tmp_choo_parameter))
                 threads.append(th)
@@ -135,4 +137,9 @@ class attack:
                     thread_msg.append(att_msg['msg'])
                     msg.append(thread_msg)
                 break
+        if self.choo_parameter['output'] != '':
+            out_file = self.choo_parameter['output']
+            self.output.output_file(out_file,msg)
         self.output.output_attack(msg,'poc result',self.choo_parameter['sort'])
+
+        

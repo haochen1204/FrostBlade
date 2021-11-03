@@ -1,5 +1,7 @@
 import datetime
+from genericpath import exists
 import lib
+import os
 from lib import color
 from prettytable import PrettyTable
 
@@ -99,3 +101,23 @@ class cmd_output:
                 i = self.color.yellow_list(i)
             tmp.append(i)
         return tmp
+
+    def output_file(self,path,msg):
+        try:
+            f = open(path,'w+')
+        except:
+            self.output_error('文件路径错误，导出结果到文件失败！')
+        if os.path.getsize(path) != 0:
+            self.__clear_file(path)
+        for i in msg:
+            for j in i:
+                f.write(j+' ')
+            f.write('\n')
+        
+
+    def __clear_file(self,path):
+        with open(path, "r+") as f:
+            read_data = f.read()
+            f.seek(0)
+            f.truncate()
+
