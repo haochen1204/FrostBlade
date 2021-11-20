@@ -8,7 +8,8 @@ GraphicalTools = {
 # python工具(指需要python3 或 python2来进行启动的工具或其他需要在命令行中手动启动的工具)
 PyTools = {
             'xray' : './tools/xray/xray',
-            'dirsearch' : 'python3 ./tools/dirsearch/dirsearch.py'
+            'dirsearch' : 'python3 ./tools/dirsearch/dirsearch.py',
+            'ysoserial' : 'java -jar ./tools/ysoserial.jar'
         }
 
 # 数据包中的内容

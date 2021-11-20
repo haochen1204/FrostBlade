@@ -1,16 +1,16 @@
 {
   "blocksInfo": {
-    "blocksInfo": "[[\"_s36znqjir\",{\"title\":\"FrostBlade\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":28},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":58},\"highlights\":\"一款简单的渗透测试框架，参考pocsuite3、msf等\"}],[\"_y28v3o3xj\",{\"title\":\"hcpoc\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"deleted\":true}],[\"_lmgv1wkb5\",{\"title\":\"FrostBlade.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":43},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":43},\"highlights\":\"主函数，负责启动该渗透测试框架\"}],[\"_6m905mt2k\",{\"title\":\"lib\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":48},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":48},\"highlights\":\"负责存放渗透测试框架核心代码等\"}],[\"_f2j3lsxzf\",{\"title\":\"mode\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":49},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":49},\"highlights\":\"负责存放一些功能性的代码文件\"}],[\"_ijv67089m\",{\"title\":\"pocs\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":50},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":50},\"highlights\":\"存放各种漏洞的探测、利用代码\"}],[\"_ul3tk1d2u\",{\"title\":\"scanner\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"highlights\":\"负责存放对漏洞进行探测的代码\"}],[\"_xmpwa8pht\",{\"title\":\"exploits\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"highlights\":\"负责存放对于漏洞进行攻击的代码\"}],[\"_b9laqtl4r\",{\"title\":\"tools\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":4},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":4},\"highlights\":\"负责存放集成在渗透测试框架中的工具\"}],[\"_b1g2ci4ln\",{\"title\":\"config.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":16},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":16},\"highlights\":\"工具的配置文件，主要负责存放一些版本信息以及一些配置的路径信息\"}],[\"_ihjjrledq\",{\"title\":\"__init__.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"highlights\":\"将该文件设置为包\"}],[\"_0qq80ybfz\",{\"title\":\"__pycache__\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"highlights\":\"存放.pyc虚拟环境文件\"}],[\"_boyojesmm\",{\"title\":\"cmd.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"highlights\":\"用于存放模仿控制台输入输出的主要函数\"}],[\"_3s5b1o5do\",{\"title\":\"function\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"highlights\":\"用于放置使用的各种功能函数\"}],[\"_p85nvi62l\",{\"title\":\"__init__.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":28},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":28}}],[\"_58388upbs\",{\"title\":\"_pycache_\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":29},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":29}}],[\"_sgsafhzfq\",{\"title\":\"show.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":2},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":2},\"highlights\":\"存放展示现有工具的函数\"}],[\"_z8jzwf8o9\",{\"title\":\"config.yaml\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"highlights\":\"xray配置文件\\n\"}],[\"_ttrjbxluc\",{\"title\":\"system.out\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"highlights\":\"java工具后台运行时输出的文件\"}],[\"_gkd3skfoq\",{\"title\":\"file.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":7,\"hours\":17,\"minutes\":24},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":7,\"hours\":17,\"minutes\":24},\"highlights\":\"存放有关文件操作的函数\"}],[\"_rj0ipd5eo\",{\"title\":\"file.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":4},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":4},\"deleted\":true}],[\"_kkwj4m507\",{\"title\":\"file.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":5},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":5},\"deleted\":true}],[\"_txa98c03x\",{\"title\":\"attack.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":17,\"hours\":16,\"minutes\":0},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":17,\"hours\":16,\"minutes\":0},\"highlights\":\"调用poc的函数\"}]]",
-    "blocksNavigator": "[\"_s36znqjir\",\"_6m905mt2k\",\"_3s5b1o5do\"]",
-    "blocksHierarchy": "{\"id\":\"_s36znqjir\",\"children\":[{\"id\":\"_lmgv1wkb5\"},{\"id\":\"_6m905mt2k\",\"children\":[{\"id\":\"_ihjjrledq\"},{\"id\":\"_0qq80ybfz\"},{\"id\":\"_b1g2ci4ln\"},{\"id\":\"_boyojesmm\"},{\"id\":\"_3s5b1o5do\",\"children\":[{\"id\":\"_p85nvi62l\"},{\"id\":\"_58388upbs\"},{\"id\":\"_sgsafhzfq\"},{\"id\":\"_gkd3skfoq\"},{\"id\":\"_txa98c03x\"}]}]},{\"id\":\"_f2j3lsxzf\"},{\"id\":\"_ijv67089m\",\"children\":[{\"id\":\"_ul3tk1d2u\"},{\"id\":\"_xmpwa8pht\"}]},{\"id\":\"_b9laqtl4r\"},{\"id\":\"_z8jzwf8o9\"},{\"id\":\"_ttrjbxluc\"}]}",
-    "nowNavigatorIndex": "2",
-    "clickedBlockID": "\"_txa98c03x\"",
-    "clickedBlockIDInMap": "\"_txa98c03x\"",
+    "blocksInfo": "[[\"_s36znqjir\",{\"title\":\"FrostBlade\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":28},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":58},\"highlights\":\"一款简单的渗透测试框架，参考pocsuite3、msf等\"}],[\"_y28v3o3xj\",{\"title\":\"hcpoc\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":29},\"deleted\":true}],[\"_lmgv1wkb5\",{\"title\":\"FrostBlade.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":43},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":56},\"highlights\":\"主函数，负责启动该渗透测试框架\"}],[\"_6m905mt2k\",{\"title\":\"lib\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":48},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":48},\"highlights\":\"负责存放渗透测试框架核心代码等\",\"deleted\":true}],[\"_f2j3lsxzf\",{\"title\":\"modules\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":49},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":49},\"highlights\":\"负责存放一些功能性的代码文件\"}],[\"_ijv67089m\",{\"title\":\"pocs\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":50},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":19,\"minutes\":50},\"highlights\":\"存放各种漏洞的探测、利用代码\"}],[\"_ul3tk1d2u\",{\"title\":\"scanner\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"highlights\":\"负责存放对漏洞进行探测的代码\"}],[\"_xmpwa8pht\",{\"title\":\"exploits\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":1},\"highlights\":\"负责存放对于漏洞进行攻击的代码\"}],[\"_b9laqtl4r\",{\"title\":\"tools\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":4},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":2,\"hours\":20,\"minutes\":4},\"highlights\":\"负责存放集成在渗透测试框架中的工具\"}],[\"_b1g2ci4ln\",{\"title\":\"config.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":16},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":16},\"highlights\":\"工具的配置文件，主要负责存放一些版本信息以及一些配置的路径信息\",\"deleted\":true}],[\"_ihjjrledq\",{\"title\":\"__init__.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"highlights\":\"将该文件设置为包\",\"deleted\":true}],[\"_0qq80ybfz\",{\"title\":\"__pycache__\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":3,\"hours\":14,\"minutes\":56},\"highlights\":\"存放.pyc虚拟环境文件\",\"deleted\":true}],[\"_boyojesmm\",{\"title\":\"cmd.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"highlights\":\"用于存放模仿控制台输入输出的主要函数\",\"deleted\":true}],[\"_3s5b1o5do\",{\"title\":\"function\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":27},\"highlights\":\"用于放置使用的各种功能函数\",\"deleted\":true}],[\"_p85nvi62l\",{\"title\":\"__init__.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":28},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":28},\"deleted\":true}],[\"_58388upbs\",{\"title\":\"_pycache_\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":29},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":10,\"minutes\":29},\"deleted\":true}],[\"_sgsafhzfq\",{\"title\":\"show.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":2},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":2},\"highlights\":\"存放展示现有工具的函数\",\"deleted\":true}],[\"_z8jzwf8o9\",{\"title\":\"config.yaml\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"highlights\":\"xray配置文件\\n\",\"deleted\":true}],[\"_ttrjbxluc\",{\"title\":\"system.out\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":6,\"hours\":15,\"minutes\":55},\"highlights\":\"java工具后台运行时输出的文件\",\"deleted\":true}],[\"_gkd3skfoq\",{\"title\":\"file.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":7,\"hours\":17,\"minutes\":24},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":7,\"hours\":17,\"minutes\":24},\"highlights\":\"存放有关文件操作的函数\",\"deleted\":true}],[\"_rj0ipd5eo\",{\"title\":\"file.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":4},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":4},\"deleted\":true}],[\"_kkwj4m507\",{\"title\":\"file.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":5},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":14,\"hours\":13,\"minutes\":5},\"deleted\":true}],[\"_txa98c03x\",{\"title\":\"attack.py\",\"createdDay\":{\"year\":2021,\"month\":10,\"date\":17,\"hours\":16,\"minutes\":0},\"modifiedDay\":{\"year\":2021,\"month\":10,\"date\":17,\"hours\":16,\"minutes\":0},\"highlights\":\"调用poc的函数\",\"deleted\":true}],[\"_0ngk86sgr\",{\"title\":\"lib\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":54},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":4},\"highlights\":\"存放工具主要的代码\"}],[\"_hdrb6z1dn\",{\"title\":\"fuction\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":54},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":54},\"highlights\":\"存放攻击时或扫描时封装的各种功能模块\"}],[\"_3agvg807m\",{\"title\":\"get_ip\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":58},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":58},\"highlights\":\"用于获取本地的ip\"}],[\"_iohlz7dj2\",{\"title\":\"console.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":15,\"minutes\":59},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":6},\"highlights\":\"存放控制台中的代码\"}],[\"_q81r6bgh3\",{\"title\":\"handler.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":14},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":23},\"highlights\":\"存放命令处理的代码\"}],[\"_axewcqy41\",{\"title\":\"attack.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":32},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":32},\"highlights\":\"存放poc、exp运行与设置的代码\"}],[\"_tvui82np3\",{\"title\":\" module.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":40},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":47},\"highlights\":\"存放功能模块运行与设置的代码\\n\"}],[\"_go629qkgu\",{\"title\":\" file.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":50},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":50},\"highlights\":\"存放关于文件操作的代码\"}],[\"_yxzgawe3e\",{\"title\":\"  config.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":57},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":58},\"highlights\":\"存放用户可以自定义的信息\"}],[\"_qe3ctimui\",{\"title\":\"thread.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":59},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":59},\"highlights\":\"重写的多线程类，可以从多线程调用的函数中获取其return\"}],[\"_hi2unk39p\",{\"title\":\"output.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":59},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":16,\"minutes\":59},\"highlights\":\"格式化输出类，利用prettytable库进行格式化的输出\"}],[\"_wl14ofhlp\",{\"title\":\"color.py\",\"createdDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":17,\"minutes\":0},\"modifiedDay\":{\"year\":2021,\"month\":11,\"date\":7,\"hours\":17,\"minutes\":0},\"highlights\":\"存放设置颜色所用代码的文件\"}]]",
+    "blocksNavigator": "[\"_s36znqjir\",\"_hdrb6z1dn\"]",
+    "blocksHierarchy": "{\"id\":\"_s36znqjir\",\"children\":[{\"id\":\"_lmgv1wkb5\"},{\"id\":\"_0ngk86sgr\",\"children\":[{\"id\":\"_iohlz7dj2\"},{\"id\":\"_q81r6bgh3\"},{\"id\":\"_axewcqy41\"},{\"id\":\"_tvui82np3\"},{\"id\":\"_go629qkgu\"},{\"id\":\"_yxzgawe3e\"},{\"id\":\"_qe3ctimui\"},{\"id\":\"_hi2unk39p\"},{\"id\":\"_wl14ofhlp\"}]},{\"id\":\"_hdrb6z1dn\",\"children\":[{\"id\":\"_3agvg807m\"}]},{\"id\":\"_f2j3lsxzf\"},{\"id\":\"_ijv67089m\",\"children\":[{\"id\":\"_ul3tk1d2u\"},{\"id\":\"_xmpwa8pht\"}]},{\"id\":\"_b9laqtl4r\"}]}",
+    "nowNavigatorIndex": "0",
+    "clickedBlockID": "\"_3agvg807m\"",
+    "clickedBlockIDInMap": "\"_0ngk86sgr\"",
     "showBlockEditor": "true",
     "markedBlocks": "[]",
     "linksInfo": "[]",
     "linkWords2LinkID": "[]",
-    "trashBlocks": "[{\"id\":\"_y28v3o3xj\",\"parentID\":\"_s36znqjir\",\"hierarchy\":{\"id\":\"_y28v3o3xj\"}},{\"id\":\"_rj0ipd5eo\",\"parentID\":\"_6m905mt2k\",\"hierarchy\":{\"id\":\"_rj0ipd5eo\"}},{\"id\":\"_kkwj4m507\",\"parentID\":\"_3s5b1o5do\",\"hierarchy\":{\"id\":\"_kkwj4m507\"}}]",
+    "trashBlocks": "[{\"id\":\"_y28v3o3xj\",\"parentID\":\"_s36znqjir\",\"hierarchy\":{\"id\":\"_y28v3o3xj\"}},{\"id\":\"_z8jzwf8o9\",\"parentID\":\"_s36znqjir\",\"hierarchy\":{\"id\":\"_z8jzwf8o9\"}},{\"id\":\"_6m905mt2k\",\"parentID\":\"_s36znqjir\",\"hierarchy\":{\"id\":\"_6m905mt2k\",\"children\":[{\"id\":\"_b1g2ci4ln\"},{\"id\":\"_boyojesmm\"},{\"id\":\"_3s5b1o5do\",\"children\":[{\"id\":\"_sgsafhzfq\",\"children\":[]},{\"id\":\"_gkd3skfoq\"},{\"id\":\"_txa98c03x\"},{\"id\":\"_kkwj4m507\"},{\"id\":\"_58388upbs\"},{\"id\":\"_p85nvi62l\"}]},{\"id\":\"_rj0ipd5eo\"},{\"id\":\"_ihjjrledq\"},{\"id\":\"_0qq80ybfz\"}]}},{\"id\":\"_ttrjbxluc\",\"parentID\":\"_s36znqjir\",\"hierarchy\":{\"id\":\"_ttrjbxluc\"}}]",
     "searchWords2LinkRect": "[]",
     "searchHistory": "[]",
     "blockGroupsTitle": "[]"
@@ -46,6 +46,15 @@
       "content": {
         "type": "doc",
         "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "def main():\n'''\n    主函数，启动时在该函数启动控制台\n'''"
+              }
+            ]
+          },
           {
             "type": "paragraph",
             "attrs": {
@@ -91,6 +100,246 @@
     },
     {
       "id": "_txa98c03x",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "_3agvg807m",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "def get_host_ip()\n'''\n    利用socket连接的方式，查询本机的ip地址\n    :return ip\n'''"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "_0ngk86sgr",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "version #版本信息\nPwd #当前使用的路径信息\nIS_WIN #判断是否为windows\nFIELD_NAME #在输出结果时，表格的头部\nPOCS #poc的所有路径\nPOCS_LIST #poc所在的目录信息\nMODULES #功能模块的信息"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "_iohlz7dj2",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "class Console:\n\ndef __parse_line(self,line):\n'''\n    将输入的命令与参数按空格分开\n    :return 命令，参数列表\n'''\n\ndef __prompt(self):\n'''\n    提示用户进行输入\n    :return FrostBlade (pwd) >\n'''\n\ndef __get_command_handler(self,command):\n'''\n    处理用户输入的命令，判断是系统的命令还是工具的命令\n    return: 命令运行的函数\n'''\n\ndef __exec_cmd(self,cmd):\n'''\n    系统命令的执行函数\n    return: 系统命令的执行结果\n'''\n\ndef start(self):\n'''\n    系统运行的主要函数\n'''"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "使用命令python3进入工具后，首先会运行该类中的start函数，进入死循环，不断提示用户输入命令，并且对命令进行相应的处理"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "_q81r6bgh3",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "class handler():\n\ndef __parse_line(self,line):\n'''\n    将输入的命令与参数分开\n    return: 命令 参数列表\n'''\n\ndef command_show(self,agrs):\n'''\n    处理命令show的函数\n'''\n\ndef _show_pocs(self,command,args):\n'''\n    处理命令show pocs的函数\n'''\n\ndef _show_modules(self,command,args):\n'''\n    处理命令show mosules的函数\n'''\n\ndef _show_info(self,command,args):\n'''\n    处理命令show info的函数\n'''\n\ndef _show_options(self,command,args):\n'''\n    处理命令show options的函数\n'''\n\ndef command_use(self,args):\n'''\n    处理命令use xxx的函数\n'''\n\ndef command_back(self,args):\n'''\n    处理命令back的函数，用于退出poc、module\n'''\n\ndef command_clear(self,args):\n'''\n    处理命令clear的函数，用于清空屏幕上的内容\n'''\n\ndef command_exit(self,artgs):\n'''\n    处理命令exit的函数，让工具退出\n'''\n\ndef command_search(self,args):\n'''\n    处理命令search xxx，查找poc、module的函数\n'''\n\ndef command_help(self,args):\n'''\n    调处理命令help，出帮助文档的函数\n'''\n\ndef command_run(self,args):\n'''\n    处理命令run xxx，打开或使用某些工具的函数\n'''\n\ndef command_set(self,args):\n'''\n    处理命令set xxx，设置poc、modules的参数的函数\n'''\n\ndef command_exploit(self,args):\n'''\n    处理命令exploit的函数，开始运行poc或module\n'''"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "在console中输入的一切命令，都经过通过魔方函数到该文件中查找是否存在对应的函数，如果存在则将这个函数返回，方便一会以变量的方式进行调用，如果不存在，则证明用户输入的是系统命令或者驶入命令有错误，给出提示。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "_axewcqy41",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "class attack:\n\ndef __init__(self,poc_pwd):\n'''\n    将需要使用的poc动态import，并创建其对应的类，从类中读取出需要的信息\n'''\n\ndef judge(self):\n'''\n    判断必须设置的餐素是否设置完成\n    return: True of False\n'''\n\ndef get_info(self):\n'''\n    循环读取使用的poc的基础信息\n'''\n\ndef get_parameter(self):\n'''\n    获取每个使用的poc中的参数信息，并将其合并\n'''\n\ndef run(self):\n'''\n    开始运行的函数，使用了多线程\n'''"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "在用户输入use后，如果路径为poc或者exp的路径，那么则将这个类实例化，根据用户输入的路径将使用的poc进行创建，并在设置好参数后运行。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "_tvui82np3",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "class modmessage:\n\ndef __init__(self,mod_pwd):\n'''\n    根据路径引入模块的文件\n'''\n\ndef judge(self):\n'''\n    根据模块所需要的参数判断设置是否完成\n'''\n\ndef get_parameter(self):\n'''\n    获取模块所需要的参数\n'''\n\ndef run(self):\n'''\n    模块运行的函数\n'''"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "在用户输入use xxx后，如果为module的目录，那么则将这个类实例化，并且根据用户后面的输入进行相应的设置或者运行"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "_go629qkgu",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "class file:\n\ndef __init__(self):\n'''\n    获取绝对路径，并且定义需要的参数\n'''\n\ndef read_pocs(self):\n'''\n    读取poc文件下的poc以及其目录\n    return: poc路径 poc所在目录路径\n'''\n\ndef read_modules(self):\n'''\n    读取modules文件下的modules\n    return: module路径\n'''\n\ndef search_pocs(self,pwd):\n'''\n    根据给定的信息从poc与module的路径中查找有类似的\n    return: 找到的poc/module路径\n'''\n\ndef read_file(self,pwd):\n'''\n    读取文件内容\n    return: 读取到的信息\n'''"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "_yxzgawe3e",
+      "content": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "code_block",
+            "content": [
+              {
+                "type": "text",
+                "text": "GraphicalTools # 打开工具的命令\nPyTools   # 命令行使用工具的命令\nPack      # 发送的数据包包头"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "attrs": {
+              "textAlign": null,
+              "indent": null,
+              "lineHeight": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "_wl14ofhlp",
       "content": {
         "type": "doc",
         "content": [

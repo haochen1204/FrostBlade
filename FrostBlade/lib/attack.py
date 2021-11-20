@@ -122,24 +122,31 @@ class attack:
                 threads.append(th)
                 th.start()
                 target_index += 1
-                bar.next()
+                if 'exploits' not in lib.Pwd:
+                    bar.next()
                 if target_index >= target_max_index:
                     target_index = 0
                     poc_index += 1
             if poc_index >= poc_max_index and threading.active_count() == 1:
-                bar.finish()
+                if 'exploits' not in lib.Pwd:
+                    bar.finish()
                 for i in threads:
-                    att_msg = i.get_result()
+                    try:
+                        att_msg = i.get_result()
+                    except:
+                        pass
                     thread_msg = []
-                    thread_msg.append(att_msg['status'])
-                    thread_msg.append(att_msg['target']) 
-                    thread_msg.append(att_msg['pocname'])
-                    thread_msg.append(att_msg['msg'])
-                    msg.append(thread_msg)
+                    if len(att_msg.keys()) != 0:
+                        thread_msg.append(att_msg['status'])
+                        thread_msg.append(att_msg['target']) 
+                        thread_msg.append(att_msg['pocname'])
+                        thread_msg.append(att_msg['msg'])
+                        msg.append(thread_msg)
                 break
         if self.choo_parameter['output'] != '':
             out_file = self.choo_parameter['output']
             self.output.output_file(out_file,msg)
-        self.output.output_attack(msg,'poc result',self.choo_parameter['sort'])
+        if len(msg) != 0:
+            self.output.output_attack(msg,'poc result',self.choo_parameter['sort'])
 
         

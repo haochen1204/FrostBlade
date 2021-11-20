@@ -39,6 +39,7 @@ class module:
     def cout(self):
         self.output = output.cmd_output()
         self.output.output_attack(self.msg,'module result')
+        self.msg = []
  
 """
 # 如何编写模块

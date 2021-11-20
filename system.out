@@ -1,0 +1,17 @@
+2021-11-05 16:20:12.516 java[3882:205371] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+2021-11-05 16:42:23.889 java[3882:205371] _TIPropertyValueIsValid called with 4 on nil context!
+2021-11-05 16:42:23.889 java[3882:205371] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2021-11-05 16:42:23.889 java[3882:205371] Text input context does not respond to _valueForTIProperty:
+2021-11-05 16:42:23.891 java[3882:205371] _TIPropertyValueIsValid called with 4 on nil context!
+2021-11-05 16:42:23.891 java[3882:205371] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2021-11-05 16:42:23.891 java[3882:205371] Text input context does not respond to _valueForTIProperty:
+2021-11-05 16:42:23.895 java[3882:205371] _TIPropertyValueIsValid called with 4 on nil context!
+2021-11-05 16:42:23.895 java[3882:205371] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2021-11-05 16:42:23.895 java[3882:205371] Text input context does not respond to _valueForTIProperty:
+2021-11-05 17:17:17.289 java[3882:205371] _TIPropertyValueIsValid called with 4 on nil context!
+2021-11-05 17:17:17.289 java[3882:205371] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2021-11-05 17:17:17.289 java[3882:205371] Text input context does not respond to _valueForTIProperty:
+2021-11-05 17:17:17.291 java[3882:205371] _TIPropertyValueIsValid called with 4 on nil context!
+2021-11-05 17:17:17.291 java[3882:205371] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2021-11-05 17:17:17.291 java[3882:205371] Text input context does not respond to _valueForTIProperty:
+Deleting temporary files - please wait ... done.
