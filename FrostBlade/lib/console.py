@@ -1,10 +1,12 @@
 from lib import output
 from lib import handler
 from lib import color
+from lib import history
 import lib
 import subprocess
 import shlex
 import chardet
+import readline
 
 class Console:
     
@@ -71,7 +73,7 @@ class Console:
             self.output.output_error("Execute cmd error {}".format(str(ex)),False)
         encoding = chardet.detect(out_data).get('encoding')
         encoding = encoding if encoding else 'utf-8'
-        if lib.IS_WIN:
+        if lib.SYSTYPE == 'windows':
             out_data = out_data.split(b'\r\n\r\n')
         else:
             out_data = out_data.split(b'\n\n')

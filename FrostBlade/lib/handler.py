@@ -6,6 +6,8 @@ from lib import module
 from lib import attack
 import lib
 import os
+import appscript
+import threading
 
 class handler():
 
@@ -27,12 +29,38 @@ class handler():
         command, _, arg = line.strip().partition(" ")
         return command, arg.strip()
 
+    def command_new(self,agrs):
+        '''
+            开启新的窗口
+        '''
+        if agrs == 'windows':
+            try:
+                command = config.python + ' ' + lib.NOWORK + '/frostblade.py'
+                if lib.SYSTYPE == 'macos':
+                    appscript.app('Terminal').do_script(command)
+                    self.output.output_info('new terminal is running!')
+                elif lib.SYSTYPE == 'windows':
+                    os.system('start cmd.exe /c '+command)
+                    self.output.output_info('new cmd is running!')
+                elif lib.SYSTYPE == 'linux':
+                    os.system("gnome-terminal -e '%s"%command)
+                    self.output.output_info('new terminal is running!')
+                else:
+                    self.output.output_error('未查询到您的操作系统类型，无法打开新的终端！')
+            except Exception as e:
+                self.output.output_error(e)
+        else:
+            self.output.output_error('Unknown new sub-command '+agrs+'. What do you want to do?',False)
+
     def command_show(self,agrs):
         '''
             命令处理函数
         '''
         self.input_command, self.input_args = self.__parse_line(agrs)
-        func = '_show_' + self.input_command
+        if self.input_command in config.CustomCommand.keys() and self.input_args == 'help':
+            func = '_show_tools_help'
+        else:
+            func = '_show_' + self.input_command
         try:
             common_handler = getattr(self,func)
             common_handler(self.input_command,self.input_args)
@@ -97,6 +125,31 @@ class handler():
         else:
             self.output.output_error('请先选择使用的poc/module!')
 
+    def _show_tools(self,command,args):
+        '''
+            显示集成工具的函数
+        '''
+        msg = 'you can use these tools in FrostBlade!\n'
+        for i in config.GraphicalTools.keys():
+            msg += i + '\n'
+        for i in config.PyTools.keys():
+            msg += i + '\n'
+        self.output.output_info(msg)
+
+    def _show_tools_help(self,command,args):
+        '''
+            显示工具自定义命令的函数
+        '''
+        tmp_msg = []
+        msg = []
+        for i in config.CustomCommand[command].keys():
+            tmp_msg.append(i)
+            tmp_msg.append(config.CustomCommand[command][i])
+            msg.append(tmp_msg)
+            tmp_msg = []
+        self.output.output_info(command+' custom command:')
+        self.output.output_message(msg,'tools help')
+
     def command_use(self,args):
         '''
             选择参数的模块
@@ -152,7 +205,7 @@ class handler():
         '''
             清空内容的函数
         '''
-        if lib.IS_WIN:
+        if lib.SYSTYPE == 'windows':
             os.system('cls')
         else:
             os.system('clear')
@@ -190,8 +243,9 @@ class handler():
         '''
             帮助文档
         '''
+        self.output.output_info('FrosetBlade help:')
         message.help()
-        
+    
     def command_run(self,args):
         '''
             打开或使用某些工具的函数
@@ -202,10 +256,52 @@ class handler():
             self.output.output_info(command+' is running!',False)
         elif command in config.PyTools.keys():
             args=args.replace(command,config.PyTools[command])
+            for i in config.CustomCommand[command].keys():
+                args=args.replace(i,config.CustomCommand[command][i],1)
+            self.output.output_info(args + ' is running! ')
             os.system(args)
         else:
             self.output.output_error('请检查您输入的工具名称，或移步至config.py配置！',False)
-            
+
+    def command_runnohup(self,args):
+        '''
+            在后台运行工具的函数
+        '''
+        command, _, arg = args.strip().partition(" ")
+        file = ''
+        args_command = ''
+        if command in config.PyTools.keys():
+            args_command=args.replace(command,config.PyTools[command])
+            for i in config.CustomCommand[command].keys():
+                args_command=args_command.replace(i,config.CustomCommand[command][i],1)
+            if 'to' in args:
+                args_list = args_command.rsplit('to',1)
+                args_command = args_list[0]
+                if len(args_list) >= 1:
+                    file = args_list[1].strip()
+            t = threading.Thread(target=self._runnohup,args=(args_command,file))
+            t.start()
+            self.output.output_info(args_command+' is running!')
+        elif command in config.GraphicalTools.keys():
+            os.system(config.GraphicalTools[command]) 
+            self.output.output_info(command+' is running!',False)
+            self.output.output_warning('But ' + command + ' do not need use runnohup to run in the background!')
+        else:
+            self.output.output_error('请检查您输入的工具名称，或移步至config.py配置！',False)
+
+    def _runnohup(self,command,file=''):
+        '''
+            后台运行工具时线程调用的工具
+        '''
+        msg = os.popen(command)
+        if file != '':
+            f = open(file,'w')
+            f.write(msg.read())
+            f.close()
+        self.output.output_info(command + ' already completed!',True)
+        if file != '':
+            self.output.output_info('you can see result in ' + file)
+
     def command_set(self,args):
         '''
             设置参数的函数

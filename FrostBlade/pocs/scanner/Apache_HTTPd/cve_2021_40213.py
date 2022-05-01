@@ -43,7 +43,7 @@ class POC(pocs.Pocs):
             att_msg['status'] = 'success'
             att_msg['msg'] = msg1 +'\n' + msg2
         if '存在' not in msg1 and '存在' not in msg2: 
-            att_msg['status'] = 'faild'
+            att_msg['status'] = 'failed'
             att_msg['msg'] = '不存在该漏洞！'
         return att_msg
 

@@ -1,5 +1,6 @@
 from lib import console
 from lib import message
+from lib import config
 import sys
 import getopt
 
@@ -9,6 +10,7 @@ def main():
     '''
     # 显示工具信息展示头
     message.head()
+    config.read_config()
     # 读取命令行选项,若没有则直接进入控制台
     if not len(sys.argv[1:]):
         cmd = console.Console()
