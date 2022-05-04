@@ -1,7 +1,6 @@
 import sys
 import os
 from lib import file
-import appscript
 
 # 版本信息
 version = '0.2'

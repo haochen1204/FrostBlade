@@ -1,4 +1,5 @@
 from lib import config
+import lib
 import readline
 import rlcompleter
 import atexit
@@ -30,7 +31,10 @@ def read_config_tab():
       读取配置文件中需要补全的命令
     '''
     TabCommand = []
-    config_path = os.path.abspath(__file__).replace('lib/history.py','') + 'FrostBlade_config.yaml'
+    if lib.SYSTYPE == 'windows':
+      config_path = os.path.abspath(__file__).replace('lib\\history.py','') + 'FrostBlade_config.yaml'
+    else:
+      config_path = os.path.abspath(__file__).replace('lib/history.py','') + 'FrostBlade_config.yaml'
     try:
       file = open(config_path,encoding='utf-8')
       data = yaml.safe_load(file)
@@ -46,7 +50,10 @@ completer = MyCompleter(read_config_tab())
 readline.set_completer(completer.complete)
 readline.parse_and_bind('tab: complete')
 # 显示历史命令
-histfile = os.path.join(os.path.abspath(__file__).replace('lib/history.py','tmp'), '.pythonhistory')
+if lib.SYSTYPE == 'windows':
+    histfile = os.path.join(os.path.abspath(__file__).replace('lib\\history.py','tmp'), '.pythonhistory')
+else:
+    histfile = os.path.join(os.path.abspath(__file__).replace('lib/history.py','tmp'), '.pythonhistory')
 try:
     # 判断文件是否存在不存在则创建一个
     if not os.path.isfile(histfile):

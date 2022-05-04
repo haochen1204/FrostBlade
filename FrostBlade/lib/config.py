@@ -1,6 +1,7 @@
 import yaml
 import os
 from lib import output
+import lib
 
 output=output.cmd_output()
 GraphicalTools = {}
@@ -20,9 +21,13 @@ def read_config():
     global CustomCommand
     global Pack
     global TabCommad
-
-    config_path = os.path.abspath(__file__).replace('lib/config.py','') + 'FrostBlade_config.yaml'
-    work_path = os.path.abspath(__file__).replace('lib/config.py','')
+    
+    if lib.SYSTYPE == 'windows':
+        config_path = os.path.abspath(__file__).replace('lib\\config.py','') + 'FrostBlade_config.yaml'
+        work_path = os.path.abspath(__file__).replace('lib\\config.py','')
+    else:
+        config_path = os.path.abspath(__file__).replace('lib/config.py','') + 'FrostBlade_config.yaml'
+        work_path = os.path.abspath(__file__).replace('lib/config.py','')
     os.chdir(work_path)
     try:
         file = open(config_path,encoding='utf-8')

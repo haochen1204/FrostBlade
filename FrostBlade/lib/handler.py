@@ -6,7 +6,6 @@ from lib import module
 from lib import attack
 import lib
 import os
-import appscript
 import threading
 
 class handler():
@@ -37,13 +36,14 @@ class handler():
             try:
                 command = config.python + ' ' + lib.NOWORK + '/frostblade.py'
                 if lib.SYSTYPE == 'macos':
+                    import appscript
                     appscript.app('Terminal').do_script(command)
                     self.output.output_info('new terminal is running!')
                 elif lib.SYSTYPE == 'windows':
-                    os.system('start cmd.exe /c '+command)
+                    os.system('start cmd.exe /k '+command)
                     self.output.output_info('new cmd is running!')
                 elif lib.SYSTYPE == 'linux':
-                    os.system("gnome-terminal -e '%s"%command)
+                    os.system("gnome-terminal -e 'bash -c \"%s\"'"%command)
                     self.output.output_info('new terminal is running!')
                 else:
                     self.output.output_error('未查询到您的操作系统类型，无法打开新的终端！')
@@ -173,7 +173,7 @@ class handler():
                 tmp_pwd == 'error'
                 self.output.output_error('您输入的参数有误，请重新输入！',False)
         else:
-            if lib.IS_WIN:
+            if lib.SYSTYPE == 'windows':
                 args = args.replace('/','\\')
             for i in lib.POCS:
                 if i[1] == args:
