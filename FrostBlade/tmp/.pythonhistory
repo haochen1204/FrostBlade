@@ -52,3 +52,98 @@ show pocs
 use  pocs/scanner/Apache_HTTP
 show info
 exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+set target http://127.0.0.1:8080
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+run brup
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+set target http://127.0.0.1:8080
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+set target https://127.0.0.1
+exploit
+set target https://127.0.0.1:8080
+exploit
+exit
+exploit
+use  pocs/scanner/Apache_HTTP
+set target https://127.0.0.1:8080
+exploit
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTP
+set target http://127.0.0.1:8080
+exploit
+exit
