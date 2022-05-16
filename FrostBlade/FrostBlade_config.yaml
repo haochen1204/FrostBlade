@@ -2,6 +2,11 @@
 # 系统中python3的命名方式，如python3或python
 python : python3
 
+# fofa
+fofa:
+  username : 
+  key : 
+
 # 后台运行工具指令
 GraphicalTools:
   behinder : nohup java -jar ./tools/Behinder/Behinder.jar >> ../system.out &
@@ -52,5 +57,6 @@ tab:
   - help
   - to
   - info
-  - option
+  - options
   - windows
+  - file

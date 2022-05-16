@@ -1,6 +1,10 @@
 import pocs
 import urllib.request
 import ssl
+import urllib3
+from colorama import init
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+init(autoreset=False) 
 
 class POC(pocs.Pocs):
 

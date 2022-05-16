@@ -19,6 +19,7 @@ class handler():
         self.input_command = ''
         self.input_args = ''
         self.last_command = ''
+        self.last_search_msg = []
         self.search_msg = []
 
     def __parse_line(self, line):
@@ -165,7 +166,7 @@ class handler():
                     tmp_pwd=lib.MODULES[index][1]
                     lib.Pwd = tmp_pwd
                 elif self.last_command == 'search':
-                    tmp_pwd=self.search_msg[index][1]
+                    tmp_pwd=self.last_search_msg[index][1]
                     lib.Pwd = tmp_pwd
                 else:
                     self.output.output_error('不明白您输入的参数，请先使用show pocs 或者 show modules查看存在的poc/module！',False)
@@ -237,6 +238,8 @@ class handler():
                 self.search_msg.append(tmp_msg)
                 index += 1
         self.output.output_message(self.search_msg,'search')
+        self.last_search_msg = self.search_msg
+        self.search_msg = []
         self.last_command = 'search'
 
     def command_help(self,args):
@@ -331,3 +334,22 @@ class handler():
         '''
         if self.mod.judge():
             self.mod.run()
+
+    def command_fofa(self,args):
+        '''
+            使用fofa查询的函数
+        '''
+        command, _, arg = args.strip().partition(" ")
+        if command == 'search':
+            command, _, arg = arg.strip().partition(" ")
+            if command != '':
+                self.mod = module.modmessage('modules/fofa_search.py')
+                self.mod.must_parameter['search_msg'] = command
+                if 'to' in arg:
+                    tmp, _, result_file,= arg.strip().partition(" ")
+                    self.mod.choo_parameter['result_path'] = result_file
+                self.mod.run()
+            else:
+                self.output.output_error('请输入正确的查询内容！',False)
+        else:
+            self.output.output_error('Unknown fofa sub-command '+args+'. What do you want to do?',False)

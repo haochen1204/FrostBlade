@@ -3,6 +3,10 @@ from lib import config
 import re
 import requests
 from bs4 import BeautifulSoup
+import urllib3
+from colorama import init
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+init(autoreset=False) 
 
 class POC(pocs.Pocs):
 

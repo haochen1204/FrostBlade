@@ -122,13 +122,4 @@ ip：192.168.1.1-192.168.1.255或192.168.1.1，192.168.1.2...
                 tmp_msg.append('is close!')
                 self.msg.append(tmp_msg)
     
-    def SYN_scan(self,ip,port):
-        '''
-            TCP SYN半开放扫描
-        '''
-
-    def UDP_scan(self,ip,port):
-        '''
-            UDP扫描
-        '''
         

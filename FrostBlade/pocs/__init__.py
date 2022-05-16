@@ -53,6 +53,10 @@ import pocs
 from lib import config
 import re
 import requests
+import urllib3
+from colorama import init
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+init(autoreset=False) 
 
 # 定义类 名称不可改变，且需要继承父类Pocs
 class POC(pocs.Pocs):

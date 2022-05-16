@@ -38,7 +38,7 @@ class file:
                     self.pocs_list.append(tmp_path)
                 # 将文件加入到pocs中
                 for i in files:
-                    if i != '__init__.py':
+                    if i != '__init__.py' and i != '.DS_Store':
                         # 将绝对路径修改为相对路径
                         # 绝对路径
                         tmp_poc_path = root + os.sep + i
