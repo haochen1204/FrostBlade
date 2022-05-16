@@ -1,0 +1,54 @@
+search Apache
+cd pocs/scanner
+use pocs/scanner/Apache_HTTPd
+show pocs
+show info
+show options
+set target http://127.0.0.1:8080
+exploit
+exit
+search httpd
+search http
+search Apache
+use pocs/scanner/Apache_HTTPd
+use  pocs/scanner/Apache_HTTPd
+show info
+set target http://127.0.0.1
+exploit
+run brup
+exploit
+exit
+use  pocs/scanner/Apache_HTTPd
+set target http://127.0.0.1
+exploit
+set target http://127.0.0.1:8080
+exploit
+exit
+use  pocs/scanner/Apache_HTTPd
+show info
+back
+use  pocs/scanner/Apache_HTTPd
+show info
+exit
+use  pocs/scanner/Apache_HTTP
+show ifno
+show info
+exit
+show info
+use  pocs/scanner/Apache_HTTP
+show info
+back
+use  pocs/scanner/Apache_HTTP
+show ifno
+show info
+exit
+use  pocs/scanner/Apache_HTTP
+show info
+exit
+use  pocs/scanner/Apache_HTTP
+show info
+exit
+show pocs
+use  pocs/scanner/Apache_HTTP
+show info
+exit

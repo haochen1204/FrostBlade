@@ -19,9 +19,7 @@ class POC(pocs.Pocs):
         self.app_name='Apache HTTP Server'
         self.app_version='2.4.49'
         self.author='haochen'
-        self.msg='''Apache HTTP Server 是以Apache基础开放的HTTP服务器，在起2.4.49版本中，引⼊了⼀个
-路径体验，攻击者利⽤这个漏洞，可以读取到Apache服务器Web⽬录以外的其他⽂件，或
-者读取Web中的脚本源码，或在开启cgi或cgid的服务器上执⾏任意命令。'''
+        self.msg='''ApacheHTTP引⼊了⼀个路径体验，攻击者利⽤这个漏洞可以读取到Apache服务器的任意文件'''
         self.must_parameter={
             'target' : ''
         }
