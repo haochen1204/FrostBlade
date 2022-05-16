@@ -4,8 +4,8 @@ python : python3
 
 # fofa
 fofa:
-  username : 
-  key : 
+  username : haochen1204@aliyun.com
+  key : c467a04f936a4e59b2a9d947a0557656
 
 # 后台运行工具指令
 GraphicalTools:
