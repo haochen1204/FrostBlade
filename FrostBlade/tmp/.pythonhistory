@@ -147,3 +147,24 @@ use  pocs/scanner/Apache_HTTP
 set target http://127.0.0.1:8080
 exploit
 exit
+whoami
+new windows
+run xray
+exit
+runnohup xray
+runnohup xray webscan --listen 127.0.0.1:7777 to ../output.txt
+runnohup xray -h to ../output.txt
+exit
+runnohup xray -h to ../output.txt
+cat ../output.txt
+clear
+run xray proxy html
+clear
+run xray proxy
+cleasr
+clear
+show modules
+use 2
+back
+help
+exit
