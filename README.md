@@ -37,13 +37,13 @@ Python3 frostblade.py 进入控制台
 
 #### 帮助文档
 
-![](/Users/haochen/code/python/FrostBlade/picture/image-20220603163241145.png)
+![](./picture/image-20220603163241145.png)
 
 #### 运行工具
 
 首先配置工具启动命令，如图
 
-![](/Users/haochen/code/python/FrostBlade/picture/image-20220603162154796.png)
+![](./picture/image-20220603162154796.png)
 
 前台直接运行工具：
 
@@ -51,7 +51,7 @@ Python3 frostblade.py 进入控制台
 
 后台运行工具：
 
-![](/Users/haochen/code/python/FrostBlade/picture/image-20220603162520877.png)
+![](./picture/image-20220603162520877.png)
 
 使用自定义命令运行工具
 
@@ -59,11 +59,11 @@ Python3 frostblade.py 进入控制台
 
 以xray为例，proxy为自定义命令，后面为自定义命令所对应的工具命令
 
-![image-20220603162601410](/Users/haochen/code/python/FrostBlade/picture/image-20220603162601410.png)
+![image-20220603162601410](./picture/image-20220603162601410.png)
 
 使用方法：
 
-![](/Users/haochen/code/python/FrostBlade/picture/image-20220603162700843.png)
+![](./picture/image-20220603162700843.png)
 
 #### 攻击载荷模块使用
 
